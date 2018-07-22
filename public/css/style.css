@@ -1,0 +1,6 @@
+body div.container.flexBox {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; }
+  body div.container.flexBox p {
+    color: blue; }

@@ -1,0 +1,20 @@
+{
+  "name": "TemplateProject",
+  "version": "1.0.0",
+  "description": "Node + Gulp(gulp-nodemon, gulp-scss, gulp-browser sync)",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.24.6",
+    "express": "^4.16.3",
+    "gulp": "^3.9.1",
+    "gulp-nodemon": "^2.2.1",
+    "gulp-sass": "^4.0.1",
+    "nodemon": "^1.18.3"
+  }
+}
