@@ -4,6 +4,7 @@ Node Template Project with: express, gulp, gulp-sass, gulp-nodemon, browser-sync
 Template project to increase productivity using an express server to aviod restarting the express server with gulp-nodemon, browser refreshing on html changes, compiling scss into css.
 
 How to use:
+
 1) Install Dependencies: npm i
 
 2) CD to the project folder and on the terminal use the command: gulp
