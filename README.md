@@ -20,6 +20,7 @@ Pre-requisites:
 
 Nodemon task for server restart on changes:
 
+```
 gulp.task('nodemon', function(cb){
     var started = false;
     
@@ -34,8 +35,10 @@ gulp.task('nodemon', function(cb){
 		} 
 	});
 });
+```
 
 Sass task to watch all the .scss files in the folder and converts to css on dest
+```
 gulp.task('sass', function(){
     // source file
     return gulp.src('./public/scss/*.scss')
@@ -43,15 +46,17 @@ gulp.task('sass', function(){
     .pipe(gulp.dest('./public/css'))
     .pipe(browserSync.stream());
 });
-
+```
 
 Watch task that watches the .scss files in the folder, if there are any changes run: sass
+```
 gulp.task('watch', function(){
     gulp.watch('./public/scss/**/*.scss', ['sass']);
 });
-
+```
 
 Browser Sync Task to watch the server in port 7000 which opens a chrome browser on that port:
+```
 gulp.task('browser-sync', ['nodemon'], function(){
     browserSync.init(null, {
         proxy: "http://localhost:3000",
@@ -60,9 +65,11 @@ gulp.task('browser-sync', ['nodemon'], function(){
         port: 7000
     });
 })
+```
 
 Set Default Gulp Task:
 Runs sass to check for changes in .scss files, then syncs gulp html with the browser the runs watch that is async
+```
 gulp.task('default', ['sass','browser-sync', 'watch']);
-
+```
 
