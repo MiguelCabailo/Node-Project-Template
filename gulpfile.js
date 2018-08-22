@@ -5,8 +5,8 @@ var browserSync = require('browser-sync');
 
 gulp.task('browser-sync', ['nodemon'], function(){
     browserSync.init(null, {
-        proxy: "http://localhost: 4000",
-        files: "app/**/*.html",
+        proxy: "http://localhost:4000",
+        files: ["**/*.html"],
         browser: "Chrome",
         port: 7000
     })
