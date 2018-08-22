@@ -10,6 +10,7 @@
   "author": "Miguel",
   "license": "ISC",
   "dependencies": {
+    "angular-route": "^1.7.3",
     "express": "^4.16.3"
   },
   "devDependencies": {
