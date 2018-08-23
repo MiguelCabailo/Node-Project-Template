@@ -1,9 +1,7 @@
-var randomData = [{ name: 'miguel', age: 20},{name: 'lovie', age: 29}];
-
 angular.module('todoApp')
-    .controller('todoController', ['$scope', function($scope){
-        
-        $scope.randomData = randomData;
+    .controller('todoController', ['$scope', '$http', function($scope,$http){
+        $http.get('/todostuff').then(function(res){
+            $scope.users = res.data;
+            
+        });
     }]);
-
-
