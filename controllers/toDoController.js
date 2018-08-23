@@ -38,6 +38,10 @@ module.exports = (app)=>{
     })
   });
 
+  app.get('*', function(req,res){
+    res.redirect('/todo');
+  })
+
   app.post('/todo', urlEncodedParser, (req,res)=>{
     // get data from the view and add it to mongoDB
   
