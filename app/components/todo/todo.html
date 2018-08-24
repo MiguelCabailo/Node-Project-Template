@@ -3,7 +3,7 @@
     <input type="text" ng-model="searchUsers" placeholder="search a user">
     
     <ul>
-        <li ng-repeat="user in users | orderBy: 'name' | filter: searchUsers">
+        <li ng-repeat="user in users | orderBy: 'name' | filter: searchUsers" style="cursor: pointer" ng-click="deleteUser(user)">
             <h3>Person: {{user.name}}</h3>
             <h4>Task: {{user.task}}</h4>
         </li>

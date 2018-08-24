@@ -38,4 +38,14 @@ module.exports = function (app) {
             res.json(data);
         });  
     });
+
+    app.delete('/todoData/:user', function(req,res,data){
+        console.log(req.params.user);
+
+        TodoMean.findByIdAndRemove(req.params.user, function(err, data){
+            if (err) throw err;
+            console.log('deleting user ' + data);
+            res.json(data);
+        })
+    });
 }
