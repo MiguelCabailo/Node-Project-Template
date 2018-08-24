@@ -5,7 +5,8 @@ var bodyParser = require('body-parser');
 var urlEncodedParser = bodyParser.urlencoded({extended:false});
 
 // connect to the mongoDB database
-mongoose.connect('mongodb://root:toor102938@ds018508.mlab.com:18508/todoapplearning'
+// enter YOUR CREDENTIALS
+mongoose.connect('mongodb://YOURUSERNAME:YOURPASSWORD@ds018508.mlab.com:18508/todoapplearning'
     , { useNewUrlParser: true });
 
 // create a schema or format for the data
