@@ -1,8 +1,9 @@
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
+var config = require('../config');
 
 // connect to the DB
-mongoose.connect('mongodb://root:toor102938@ds018508.mlab.com:18508/todoapplearning'
+mongoose.connect('mongodb://' + config.mongoDB.userName + ':' + config.mongoDB.userPassword + '@ds018508.mlab.com:18508/todoapplearning'
 , { useNewUrlParser: true });
 
 // schema for the DB(blue-print for the data)
