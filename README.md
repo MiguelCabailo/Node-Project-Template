@@ -1,6 +1,7 @@
 # TodoMeanStack
 
-Todo App Using MongoDB(hosted by mlab), Express, Angularjs and NodeJS
+Todo App Using MongoDB(hosted by Mlab), Express, Angularjs and NodeJS
+*must use own credentials for Mlab
 
 Dependencies
 - body-parser
