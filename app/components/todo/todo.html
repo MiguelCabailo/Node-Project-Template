@@ -1,18 +1,24 @@
-<div>
+<div class="content">
     <h1>todo</h1>
     <input type="text" ng-model="searchUsers" placeholder="search a user">
     
+    <!--
+        ng-repeat: stores each individual objects from users in the user variable
+        ng-click: runs a function on the controller that deletes from the database
+    -->
     <ul>
-        <li ng-repeat="user in users | orderBy: 'name' | filter: searchUsers" style="cursor: pointer" ng-click="deleteUser(user)">
+        <li ng-repeat="user in users | orderBy: 'name' | filter: searchUsers" ng-click="deleteUser(user)">
             <h3>Person: {{user.name}}</h3>
             <h4>Task: {{user.task}}</h4>
         </li>
     </ul>
 
+    <!--
+        ng-model: stores the data in a variable accessible by the controller
+    -->
     <form ng-submit="addUser()">
         <input type="text" name="name" ng-model="newUser.name" placeholder="name" required>
         <input type="text" name="task" ng-model="newUser.task" placeholder="task" required>
         <input type="submit" value="submit">
     </form>
-
 </div>

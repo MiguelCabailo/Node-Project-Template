@@ -1,5 +1,11 @@
 body{
-    p {
-        color:blue;
+    .content ul li{
+        cursor: pointer;
     }
+
+    .content ul li:hover{
+        color: red;
+        text-decoration: underline;
+    }
+
 }

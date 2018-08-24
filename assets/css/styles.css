@@ -1,2 +1,6 @@
-body p {
-  color: blue; }
+body .content ul li {
+  cursor: pointer; }
+
+body .content ul li:hover {
+  color: red;
+  text-decoration: underline; }
