@@ -1,12 +1,14 @@
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
+//config file
+var config = require('../../../config');
 
 // route specific body parser
 var urlEncodedParser = bodyParser.urlencoded({extended:false});
 
 // connect to the mongoDB database
 // enter YOUR CREDENTIALS
-mongoose.connect('mongodb://YOURUSERNAME:YOURPASSWORD@ds018508.mlab.com:18508/todoapplearning'
+mongoose.connect('mongodb://' + config.mongoDB.userName + ':' + config.mongoDB.userPassword + '@ds018508.mlab.com:18508/todoapplearning'
     , { useNewUrlParser: true });
 
 // create a schema or format for the data
