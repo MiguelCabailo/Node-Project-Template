@@ -1,5 +1,5 @@
 var express = require('express');
-var todoService = require('./app/components/todo/todoService');
+var todoMongoDb = require('./app/components/todo/todoMongoDb');
 
 var app = express();
 
@@ -7,7 +7,7 @@ app.use(express.static('./app'));
 app.use(express.static('./assets'));
 
 /* To-do Services(MongoDB) */
-todoService(app);
+todoMongoDb(app);
 
 app.get("/", function(req,res){
     res.sendFile(__dirname + '/index.html');

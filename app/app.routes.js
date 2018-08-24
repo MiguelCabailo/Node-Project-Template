@@ -5,6 +5,7 @@ angular.module('todoApp').config(['$routeProvider', function($routeProvider){
         })
         .when('/todo',{
             templateUrl: '/components/todo/todo.html',
+            controller: 'todoController'
         })
         .when('/contact',{
             templateUrl: '/components/contact/contact.html'
