@@ -1,6 +1,25 @@
-body .content ul li {
-  cursor: pointer; }
-
-body .content ul li:hover {
-  color: red;
-  text-decoration: underline; }
+body {
+  /* Animations */ }
+  body main.ng-enter {
+    transition: all 0.5s linear;
+    opacity: 0; }
+  body main.ng-enter.ng-enter-active {
+    opacity: 1; }
+  body #taskCards.ng-enter {
+    transition: all 1s linear;
+    opacity: 0; }
+  body #taskCards.ng-enter.ng-enter-active {
+    transition: all 1s linear;
+    opacity: 1; }
+  body #taskCards {
+    height: 200px; }
+  body .capitalize:first-letter {
+    text-transform: capitalize; }
+  body #todoContent form {
+    padding-bottom: 30px; }
+  body #addUserAndTaskForm, body #searchUserAndTask {
+    margin-top: 10px;
+    border: 1px solid green;
+    border-radius: 30px;
+    padding: 20px;
+    width: 50%; }

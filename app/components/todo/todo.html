@@ -1,24 +1,43 @@
-<div class="content">
-    <h1>todo</h1>
-    <input type="text" ng-model="searchUsers" placeholder="search a user">
-    
+<div id="todoContent" class="container">
+    <h1>Task List</h1>
+
+    <div class="row">
+        <form class="col s6">
+            <label for="taskPerson">Search Users and Tasks</label>
+            <input id="taskPerson" class="input-field" type="text" name="name" ng-model="searchUsers" required>
+        </form>
+        <button ng-click="order ='name'" class="waves-effect waves-light btn">Order By Name</button>
+        <button ng-click="order ='task'" class="waves-effect waves-light btn">Order By Task</button>
+    </div>
+
     <!--
         ng-repeat: stores each individual objects from users in the user variable
         ng-click: runs a function on the controller that deletes from the database
     -->
-    <ul>
-        <li ng-repeat="user in users | orderBy: 'name' | filter: searchUsers" ng-click="deleteUser(user)">
-            <h3>Person: {{user.name}}</h3>
-            <h4>Task: {{user.task}}</h4>
-        </li>
-    </ul>
+    <div class="row">
+        <div id="taskCards" class="col s3" ng-repeat="user in users| orderBy: order |filter: searchUsers">
+            <div>
+                <div class="card orange">
+                    <div class="card-content white-text">
+                        <h6><strong>Name:</strong> {{user.name}}</h6>
+                        <h6><strong>Task:</strong> {{user.task}}</h6>
+                    </div>
+                </div>
+                <button class="hover waves-effect waves-light btn grey" ng-click="deleteUser(user)">Delete Task</button>
+            </div>
+        </div>
+    </div>
 
-    <!--
-        ng-model: stores the data in a variable accessible by the controller
-    -->
-    <form ng-submit="addUser()">
-        <input type="text" name="name" ng-model="newUser.name" placeholder="name" required>
-        <input type="text" name="task" ng-model="newUser.task" placeholder="task" required>
-        <input type="submit" value="submit">
-    </form>
+    <div class="col s6">
+        <label for="addUserAndTaskForm">Add your task:</label>
+        <form id="addUserAndTaskForm" ng-submit="addUser()">
+            <label for="taskPerson">Name</label>
+            <input id="taskPerson" class="input-field validate" type="text" name="name" ng-model="newUser.name" required>
+
+            <label for="taskTodo">Task</label>
+            <input class="input-field validate" id="taskTodo" type="text" name="task" ng-model="newUser.task" required>
+
+            <button class="btn waves-effect waves-light" type="submit">Submit<i class="material-icons right">send</i></button>
+        </form>
+    </div>
 </div>

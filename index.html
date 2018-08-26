@@ -7,19 +7,27 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>TodoMEAN</title>
 
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <link rel="stylesheet" href="/libs/materialize.min.css">
     <link rel="stylesheet" href="./css/styles.css">
 
     <script src="/libs/angular.min.js"></script>
     <script src="/libs/angular-route.min.js"></script>
+    <script src="/libs/angular-animate.min.js"></script>
     <script src="/app.module.js"></script>
     <script src="/app.routes.js"></script>
     <script src="/components/todo/todoController.js"></script>
 </head>
 
-<body ng-controller="todoController">
+<body>
     <header ng-include="'/shared/header/header.html'"></header>
     
     <main ng-view></main>
+
+
+    <script src="/libs/materialize.min.js"></script>
 </body>
 
 </html>

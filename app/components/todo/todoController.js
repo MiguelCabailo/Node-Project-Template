@@ -20,7 +20,9 @@ angular.module('todoApp')
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'}})
                     .then(function(res){
                         console.log(res);
-                        location.reload();
+                        $http.get('/todoData').then(function (res) {
+                            $scope.users = res.data;
+                        });
                     });
         }
         
@@ -28,9 +30,10 @@ angular.module('todoApp')
         $scope.deleteUser = function(user){
           console.log(user._id);
             $http.delete('/todoData/' + user._id, user._id).then(function(res){
-                console.log("/deleted");
-                console.log(res);
-                location.reload();
+                console.log(res.data);
+                $http.get('/todoData').then(function (res) {
+                    $scope.users = res.data;
+                });
             });
         }
     }]);
