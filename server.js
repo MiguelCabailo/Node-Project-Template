@@ -22,7 +22,6 @@ mongoose
     .then(()=> console.log('MongoDB Connected...'))
     .catch((err)=> console.log(err));
 
-
 // Use Routes
 // anything that goes to this path should refer to the items Database
 app.use('/api/items', items)

@@ -26,7 +26,7 @@ router.post('/', (req,res)=>{
         name: req.body.name
     });
 
-    // save to memory
+    // save to database
     newItem.save().then((item)=> res.json(item));
 
     // header content-type json on postman and use raw and type in object literal
