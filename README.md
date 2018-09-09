@@ -1,5 +1,6 @@
-# NodejsProjectTemplates
-Node Template Projects
+# MERN STACK-Shopping List unitl Deployment
 
-Simple Backend with Nodejs Express and MongoDB
+Backend with Nodejs Express and MongoDB
 - GET/POST/DELETE
+
+Front-End using React With Redux
