@@ -33,13 +33,10 @@ if(process.env.NODE_ENV === 'production'){
 
     app.use(express.static('client/build'));
 
-    app.get("/", function(req,res){
-        res.sendFile(__dirname + 'client/build/public/index.html');
-    });
-
     // all requests load index.html
     app.get('*', (req,res)=>{
-        res.redirect('/');
+        // should load the html unless hitting the api
+        res.sendfile(path.resolve(__dirname, 'client', 'build', 'index.html'));
     })
 }
 
