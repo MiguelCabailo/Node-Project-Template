@@ -24,16 +24,16 @@ class ShoppingList extends Component {
         console.log(this.props);
         const { items } = this.props.item;
 
-        const itemList = items.length ? (
+        const itemList = items ? (
             // destructure the item.id. grab the id and store it in id
-            items.map(( {id, name} ) => (
-                <CSSTransition key={id} timeout={500} classNames="fade">
+            items.map(( {_id, name} ) => (
+                <CSSTransition key={_id} timeout={500} classNames="fade">
                     <ListGroupItem>
                         <Button
                             className="remove-btn"
                             color="danger"
                             size="sm"
-                            onClick={()=>this.onDeleteClick(id)}
+                            onClick={()=>this.onDeleteClick(_id)}
                         >&times;</Button>
                         {name}
                     </ListGroupItem>
