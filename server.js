@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const path = require('path');
 
 // items Database
 const items = require('./routes/api/items');
@@ -25,6 +26,19 @@ mongoose
 // Use Routes
 // anything that goes to this path should refer to the items Database
 app.use('/api/items', items)
+
+// Serve static assets if in production
+if(process.env.NODE_ENV === 'production'){
+    // Set static folder
+
+    app.use(express.static('client/build'));
+
+    // all requests load index.html
+    app.get('*', (req,res)=>{
+        // should load the html unless hitting the api
+        res.sendfile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+    })
+}
 
 
 // if using heroku||5000
