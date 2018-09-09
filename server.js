@@ -19,7 +19,7 @@ const db = require('./config/keys').mongoURI;
 // Connect to MongoDB using the exported keys
 // promise based
 mongoose
-    .connect('mongodb://root:toor102938@ds020208.mlab.com:20208/mern-shoppinglist', {useNewUrlParser:true})
+    .connect(db, {useNewUrlParser:true})
     .then(()=> console.log('MongoDB Connected...'))
     .catch((err)=> console.log(err));
 
